@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="2024-08-08-3-create-table-user_roles"
+               id="2024-08-08-3-create-table-user_roles" author="avraam112russo">
+        <createTable tableName="user_roles">
+            <column name="user_id" type="uuid">
+                <constraints nullable="false" foreignKeyName="user_id" references="users(id)" deleteCascade="true"/>
+            </column>
+            <column name="role_id" type="uuid">
+                <constraints nullable="false" foreignKeyName="role_id" references="roles(id)" deleteCascade="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
